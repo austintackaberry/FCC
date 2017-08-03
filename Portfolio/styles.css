@@ -1,0 +1,52 @@
+body {
+  background-color: #00071a;
+  background-image: url("https://www.transparenttextures.com/patterns/45-degree-fabric-light.png");
+  color: white;
+  margin: 0 auto;
+  font-family: 'Ubuntu', sans-serif;
+}
+
+h1 {
+  font-size: 96px;
+}
+
+h2 {
+  font-size: 54px;
+}
+
+p {
+  font-size: 18px;
+}
+
+#content {
+  margin: 0 auto;
+  width: 65%;
+  text-align: center;
+}
+
+img.resize {
+  width: 75%;
+  height: auto;
+}
+
+#tribute {
+  max-width: 75%;
+  max-height: 75%;
+}
+
+.fa {
+    padding: 20px;
+    font-size: 30px;
+    width: 30px;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 50%;
+}
+
+.fa-reddit {
+  color: #FF5700;
+}
+
+.fa-github {
+  color: white;
+}
