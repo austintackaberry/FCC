@@ -1,5 +1,4 @@
 h1 {
-  font-family: 'Ubuntu', sans-serif;
   font-weight: bold;
   font-size: 48px;
 }
@@ -14,9 +13,15 @@ h2 {
   margin: 0 auto;
   width: 65%;
   margin-top: 75px;
+  margin-bottom: 75px;
+  font-family: 'Ubuntu', sans-serif;
 }
 
-#craig-pic {
-  width: 75%
+#content2 {
+  padding: 0% 12% 0% 12%;
+}
+
+#p1 {
+  padding-top: 20px;
 }
 
