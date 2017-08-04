@@ -22,6 +22,8 @@ p {
   margin: 0 auto;
   width: 65%;
   text-align: center;
+  margin-top: 20px;
+  margin-bottom: 10px;
 }
 
 img.resize {
@@ -49,4 +51,17 @@ img.resize {
 
 .fa-github {
   color: white;
+}
+
+.fa-twitter {
+  color: #0084B4;
+}
+
+.fa-linkedin {
+  color: #0077B5;
+}
+
+.main-class {
+  margin-top: 20px;
+  margin-bottom: 10px;
 }
