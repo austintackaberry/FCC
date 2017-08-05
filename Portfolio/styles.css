@@ -6,6 +6,11 @@ body {
   font-family: 'Ubuntu', sans-serif;
 }
 
+.navbar {
+  background-color: #00071a;
+  background-image: url("https://www.transparenttextures.com/patterns/45-degree-fabric-light.png");
+}
+
 h1 {
   font-size: 96px;
 }
@@ -26,9 +31,13 @@ p {
   margin-bottom: 10px;
 }
 
-img.resize {
-  width: 75%;
-  height: auto;
+.container {
+  width: 400px;
+  height: 520px;
+}
+
+.container img{
+  max-width: 100%;
 }
 
 #tribute {
@@ -37,9 +46,8 @@ img.resize {
 }
 
 .fa {
-    padding: 20px;
-    font-size: 30px;
-    width: 30px;
+    width: 56px;
+    margin: 10px;
     text-align: center;
     text-decoration: none;
     border-radius: 50%;

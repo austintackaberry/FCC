@@ -2,30 +2,43 @@
 <html lan="en">
   <head>
     <link rel="stylesheet" href="reset.css">
-    <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Ubuntu" type="text/css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="styles.css">
   </head>
   <body>
-    <div class="container-fluid">
-      <div id="content">
-        <h1 class="main-class">Austin Tackaberry</h1>
-        <img class="main-class" src="pic.jpg" alt="Professional Picture">
-        <h2 class="main-class">About</h2>
-        <p class="main-class">
-          Self-taught web developer with a Chemical Engineering degree from Purdue University. My journey began May 27, 2017,
-          and I have been passionately programming ever since. I dove into programming with Udacity CS101, Harvard edX CS50,
-          FreeCodeCamp, attending meetups, listening to podcasts, reading blogs. I can't wait to make the official career change!
-        </p>
-        <div class="main-class">
-          <a href="https://www.linkedin.com/in/austintackaberry/" class="fa fa-linkedin fa-3x"></a>
-          <a href="https://twitter.com/AETackaberry" class="fa fa-twitter fa-3x"></a>
-          <a href="https://github.com/austintackaberry/" class="fa fa-github fa-3x"></a>
-          <a href="https://www.reddit.com/user/austintackaberry/" class="fa fa-reddit fa-3x"></a>
+    <nav class="navbar navbar-inverse">
+        <div class="container-fluid">
+          <div class="navbar-header">
+            <a class="navbar-brand" href ="#">Portfolio</a>
+          </div>
+          <ul class="nav navbar-nav">
+            <li class="active"><a href="#">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#portfolio">Portfolio</a></li>
+          </ul>
+          <div id="content">
+            <h1 class="main-class">Austin Tackaberry</h1>
+            <div class="container main-class">
+              <img src="pic.jpg" alt="Professional Picture">
+            </div>
+            <h2 id="about" class="main-class">About</h2>
+            <p class="main-class">
+              Self-taught web developer with a Chemical Engineering degree from Purdue University. My journey began May 27, 2017,
+              and I have been passionately programming ever since. I dove into programming with Udacity CS101, Harvard edX CS50,
+              FreeCodeCamp, attending meetups, listening to podcasts, reading blogs. I can't wait to make the official career change!
+            </p>
+            <div class="main-class">
+              <a href="https://www.linkedin.com/in/austintackaberry/" class="fa fa-linkedin fa-4x"></a>
+              <a href="https://twitter.com/AETackaberry" class="fa fa-twitter fa-4x"></a>
+              <a href="https://github.com/austintackaberry/" class="fa fa-github fa-4x"></a>
+              <a href="https://www.reddit.com/user/austintackaberry/" class="fa fa-reddit fa-4x"></a>
+            </div>
+            <h2 id="portfolio" class="main-class">Portfolio</h2>
+            <img src="tribute.png" alt="Tribute to Craig Newmark" id="tribute">
+          </div>
         </div>
-        <h2 class="main-class">Portfolio</h2>
-        <img src="tribute.png" alt="Tribute to Craig Newmark" id="tribute">
-      </div>
-    </div>
+    </nav>
   </body>
 </html>
