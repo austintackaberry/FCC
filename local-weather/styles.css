@@ -1,0 +1,20 @@
+body{
+  text-align: center;
+  background-color: rgb(154, 194, 200);
+  margin-top: 200px;
+  margin-right: 20%;
+  margin-left: 20%;
+  border-style: solid;
+}
+.btn{
+  margin-bottom: 20px;
+}
+
+.cloud{
+  width: 50%;
+  margin: 0 auto;
+}
+img {
+  width: 100%;
+  height: auto;
+}
