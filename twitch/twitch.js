@@ -25,15 +25,15 @@ function manipulation(type, username, data) {
   var html = '';
   if (type == 'channels') {
     html = '<img src =' + data.logo + ' width="25" height ="25" class="img-rounded">';
-    $("div." + username +" > div.img").append(html);
+    $("p." + username +" > span.img").append(html);
   }
   if (type == 'streams' && data.stream == null) {
-    html += "<a href= 'https://www.twitch.tv/" + username + "'>" + username +"</a> is not streaming<br>";
-    $("div." + username + " > p.words").append(html);
+    html += " <a href= 'https://www.twitch.tv/" + username + "'>" + username +"</a> is not streaming<br>";
+    $("p." + username + " > span.words").append(html);
   }
   else if (type == 'streams') {
-    html += "<a href= 'https://www.twitch.tv/" + username + "'>" + username +"</a> is streaming<br>" + data.stream.channel.status;
-    $("div."+username + " > p.words").append(html);
+    html += " <a href= 'https://www.twitch.tv/" + username + "'>" + username +"</a> is streaming<br>" + data.stream.channel.status;
+    $("p."+username + " > span.words").append(html);
   }
   return 0;
 }

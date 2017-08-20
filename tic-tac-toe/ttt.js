@@ -5,31 +5,62 @@ var board = [
   [0,0,0],
   [0,0,0]
 ];
-
+var result = '';
+var marker = {'user':'X', 'AI':'O'};
 
 $(document).ready(function() {
   $(document).on("click", function() {
-    var elemClicked = $(event.target).attr('class').split(' ');
-    if (elemClicked[0].charAt(0) == 'r' && elemClicked[1].charAt(0) == 'c') {
-      if (board[elemClicked[0].charAt(1)-1][elemClicked[1].charAt(1)-1] == 0) {
-        elemClickedFormat = "." + elemClicked[0]+"."+elemClicked[1];
-        console.log(elemClickedFormat);
-        $(elemClickedFormat).html("X");
-        totalMoves++;
-        board[elemClicked[0].charAt(1)-1][elemClicked[1].charAt(1)-1] = 1;
-        checkWin();
-        if (totalMoves == 9) {
-          return 0;
+    var elemClicked = $(event.target).attr('class');
+    if (elemClicked == 'buttXO' && totalMoves == 0) {
+      var tmp = marker['user']
+      marker['user'] = marker['AI']
+      marker['AI'] = tmp;
+      $(".buttXO").html(marker['user']);
+    }
+    else {
+      var elemClicked = $(event.target).attr('class').split(' ');
+      if (elemClicked[0].charAt(0) == 'r' && elemClicked[1].charAt(0) == 'c') {
+        if (board[elemClicked[0].charAt(1)-1][elemClicked[1].charAt(1)-1] == 0) {
+          elemClickedFormat = "." + elemClicked[0]+"."+elemClicked[1];
+          $(elemClickedFormat).html(marker['user']);
+          totalMoves++;
+          board[elemClicked[0].charAt(1)-1][elemClicked[1].charAt(1)-1] = 1;
+          checkWin();
+          if (totalMoves == 9) {
+            return 0;
+          }
+          if (result == '') {
+            return AI();
+          }
         }
-        return AI();
       }
     }
   });
 });
 
+function restartGame() {
+  totalMoves = 0;
+  board = [
+    [0,0,0],
+    [0,0,0],
+    [0,0,0]
+  ];
+  $(".r1.c1").html("");
+  $(".r1.c2").html("");
+  $(".r1.c3").html("");
+  $(".r2.c1").html("");
+  $(".r2.c2").html("");
+  $(".r2.c3").html("");
+  $(".r3.c1").html("");
+  $(".r3.c2").html("");
+  $(".r3.c3").html("");
+  result = '';
+  $("h1").html(result);
+}
+
 function AI() {
   if (board[1][1] === 0) {
-    $(".r2.c2").html("O");
+    $(".r2.c2").html(marker['AI']);
     board[1][1] = -1;
     totalMoves++;
   }
@@ -47,7 +78,7 @@ function AI() {
     }
     while (boardVal != 0);
     board[i][j] = -1;
-    $(".r"+(i+1)+".c"+(j+1)).html("O");
+    $(".r"+(i+1)+".c"+(j+1)).html(marker['AI']);
     totalMoves++;
     checkWin();
   }
@@ -57,7 +88,11 @@ function AI() {
 function checkWin() {
   var countWin = whoWins(checkRow()) + whoWins(checkCol()) + whoWins(checkCross());
   if (totalMoves == 9 && countWin == 0) {
-    $("h1").html("CATS GAME");
+    result = "CATS GAME"
+    $("h1").html(result);
+    setTimeout(function() {
+      restartGame();
+    }, 2000);
     return 0;
   }
 }
@@ -101,14 +136,21 @@ function checkRow() {
   return 0;
 }
 
-
 function whoWins(counter) {
   if (counter == 3) {
-    $("h1").html("USER WINS");
+    result = 'USER WINS'
+    $("h1").html(result);
+    setTimeout(function() {
+      restartGame();
+    }, 2000);
     return 1;
   }
   else if (counter == -3) {
-    $("h1").html("AI WINS");
+    result = 'AI WINS'
+    $("h1").html(result);
+    setTimeout(function() {
+      restartGame();
+    }, 2000);
     return 1;
   }
   return 0;
